@@ -330,3 +330,14 @@ cc_library_shared {
     vendor: true,
     compile_multilib: "64",
 }
+
+
+cc_library_headers {
+    name: "libboringssl_headers",
+    vendor: true,
+    recovery_available: true,
+    export_include_dirs: ["thirdparty/boringssl/include"],
+    visibility: [
+        "//vendor:__subpackages__",  // 允许这个路径访问
+    ],
+}
